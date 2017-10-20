@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace RecipeBookServer.Model.Recipes
+namespace RecipeBookServer.Model
 {
   public  class Ingredient:Entity
     {

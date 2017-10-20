@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace RecipeBookServer.Model.Recipes
+namespace RecipeBookServer.Model
 {
   public class Recipe:Entity
     {

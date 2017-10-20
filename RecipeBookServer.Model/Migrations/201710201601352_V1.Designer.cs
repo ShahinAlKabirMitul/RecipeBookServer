@@ -7,13 +7,13 @@ namespace RecipeBookServer.Model.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddRecipeV1 : IMigrationMetadata
+    public sealed partial class V1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddRecipeV1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(V1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710200809015_Add Recipe V1"; }
+            get { return "201710201601352_V1"; }
         }
         
         string IMigrationMetadata.Source

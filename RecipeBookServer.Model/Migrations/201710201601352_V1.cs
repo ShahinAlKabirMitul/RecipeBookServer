@@ -3,7 +3,7 @@ namespace RecipeBookServer.Model.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddRecipeV1 : DbMigration
+    public partial class V1 : DbMigration
     {
         public override void Up()
         {
@@ -11,14 +11,14 @@ namespace RecipeBookServer.Model.Migrations
                 "dbo.Ingredients",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.String(nullable: false, maxLength: 128),
                         Name = c.String(nullable: false, maxLength: 100),
                         Amout = c.Int(nullable: false),
                         Created = c.DateTime(nullable: false),
-                        CreatedBy = c.String(),
+                        CreatedBy = c.String(nullable: false, maxLength: 100),
                         Modified = c.DateTime(nullable: false),
-                        ModifiedBy = c.String(),
-                        Recipe_Id = c.Int(),
+                        ModifiedBy = c.String(nullable: false, maxLength: 100),
+                        Recipe_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Recipes", t => t.Recipe_Id)
@@ -28,14 +28,14 @@ namespace RecipeBookServer.Model.Migrations
                 "dbo.Recipes",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.String(nullable: false, maxLength: 128),
                         Name = c.String(nullable: false, maxLength: 100),
                         Description = c.String(nullable: false, maxLength: 100),
                         ImagePath = c.String(nullable: false, maxLength: 500),
                         Created = c.DateTime(nullable: false),
-                        CreatedBy = c.String(),
+                        CreatedBy = c.String(nullable: false, maxLength: 100),
                         Modified = c.DateTime(nullable: false),
-                        ModifiedBy = c.String(),
+                        ModifiedBy = c.String(nullable: false, maxLength: 100),
                     })
                 .PrimaryKey(t => t.Id);
             
