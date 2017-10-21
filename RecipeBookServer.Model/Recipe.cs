@@ -14,9 +14,7 @@ namespace RecipeBookServer.Model
         [Required]
         [MaxLength(500)]
         public string ImagePath { get; set; }
-        public List<Ingredient> Ingredients { get; set; }
 
-
-
+        public virtual List<Ingredient> Ingredients { get; set; }
     }
 }

@@ -15,9 +15,14 @@ namespace RecipeBookServer.ServerAPI.Controllers
         RecipeService service = new RecipeService();
         public IHttpActionResult Post(Recipe recipe)
         {
-          
-           bool add= service.Add(recipe);
-           return this.Ok(add);
+            bool add = service.Add(recipe);
+            return this.Ok(add);
+        }
+
+        public IHttpActionResult PostRecipes(List<Recipe> recipe)
+        {
+            bool add = service.Add(recipe);
+            return this.Ok(add);
         }
 
         public List<Recipe> GetRecipes()

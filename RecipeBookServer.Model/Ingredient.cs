@@ -9,6 +9,10 @@ namespace RecipeBookServer.Model
         public string Name { get; set; }
 
         [Required]
-        public int Amout { get; set; }
+        public int Amount { get; set; }
+
+        public string RecipeId { get; set; }
+        public virtual Recipe Recipe { get; set; }
+
     }
 }

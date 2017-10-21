@@ -21,5 +21,10 @@ namespace RecipeBookServer.Services
         {
             return repo.GetRecipes();
         }
+
+        public bool Add(List<Recipe> recipe)
+        {
+            return repo.Add(recipe);
+        }
     }
 }

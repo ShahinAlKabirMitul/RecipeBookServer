@@ -13,7 +13,7 @@ namespace RecipeBookServer.Model.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201710201601352_V1"; }
+            get { return "201710201741242_V1"; }
         }
         
         string IMigrationMetadata.Source
