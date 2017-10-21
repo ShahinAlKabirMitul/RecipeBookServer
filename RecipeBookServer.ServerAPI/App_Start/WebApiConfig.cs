@@ -17,10 +17,21 @@ namespace RecipeBookServer.ServerAPI
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
 
-            config.Formatters.Clear();
-            config.Formatters.Add(new JsonMediaTypeFormatter());
+           
+
+
             var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
+
+            config.Formatters.Clear();
+            config.Formatters.Add(new JsonMediaTypeFormatter());
+
+           // HttpConfiguration config = GlobalConfiguration.Configuration;
+
+            config.Formatters.JsonFormatter
+                .SerializerSettings
+                .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
 
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
@@ -34,6 +45,7 @@ namespace RecipeBookServer.ServerAPI
             //    defaults: new { id = RouteParameter.Optional }
 
             //);
+
             config.Routes.MapHttpRoute(
                 name: "ControllerOnly",
                 routeTemplate: "api/{controller}"
@@ -55,7 +67,6 @@ namespace RecipeBookServer.ServerAPI
                 name: "ControllerAndAction",
                 routeTemplate: "api/{controller}/{action}"
             );
-
         }
     }
 }

@@ -12,6 +12,8 @@ namespace RecipeBookServer.ServerAPI.Controllers
 {
     public class RecipeController : ApiController
     {
+      
+
         RecipeService service = new RecipeService();
         public IHttpActionResult Post(Recipe recipe)
         {
@@ -27,7 +29,9 @@ namespace RecipeBookServer.ServerAPI.Controllers
 
         public List<Recipe> GetRecipes()
         {
-            return service.GetRecipes();
+            List<Recipe> data=service.GetRecipes();
+          
+            return data;
         }
     }
 }

@@ -8,6 +8,6 @@ namespace RecipeBookServer.ViewModel
 {
   public class RecipeViewModel
     {
-
+        
     }
 }

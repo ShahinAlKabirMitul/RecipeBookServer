@@ -70,7 +70,14 @@ namespace RecipeBookServer.Repository
          {
             using (var db=new BusinessDbContext())
             {
-                return db.Recipes.ToList();
+                db.Configuration.ProxyCreationEnabled = false;
+                var data = db.Recipes.ToList();
+                foreach (Recipe recipe in data)
+                {
+                    recipe.Ingredients = db.Ingredients.Where(s => s.RecipeId == recipe.Id).ToList();
+                }
+                
+                return data;
             }
         }
     }
